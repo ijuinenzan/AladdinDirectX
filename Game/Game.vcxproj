@@ -111,6 +111,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Director.h" />
     <ClInclude Include="DirectX\Include\audiodefs.h" />
     <ClInclude Include="DirectX\Include\comdecl.h" />
     <ClInclude Include="DirectX\Include\D2D1.h" />
@@ -185,6 +186,10 @@
     <ClInclude Include="DirectX\Include\XInput.h" />
     <ClInclude Include="DirectX\Include\xma2defs.h" />
     <ClInclude Include="DirectX\Include\xnamath.h" />
+    <ClInclude Include="Framework\Application.h" />
+    <ClInclude Include="Framework\Definitions.h" />
+    <ClInclude Include="Framework\IWindow.h" />
+    <ClInclude Include="Framework\Window.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DirectX\Include\D3DX10math.inl" />
@@ -223,6 +228,13 @@
     <Library Include="DirectX\Lib\xapobased.lib" />
     <Library Include="DirectX\Lib\XAPOFX.lib" />
     <Library Include="DirectX\Lib\XInput.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Director.cpp" />
+    <ClCompile Include="Framework\Application.cpp" />
+    <ClCompile Include="Framework\IWindow.cpp" />
+    <ClCompile Include="Framework\Window.cpp" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
