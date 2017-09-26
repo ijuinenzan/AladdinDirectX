@@ -13,5 +13,347 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="DirectX">
+      <UniqueIdentifier>{13dd62fb-c9fe-497a-b4fb-9bdc797b443b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DirectX\Include">
+      <UniqueIdentifier>{df9189f9-2448-46c7-b305-1be0d5cf3603}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DirectX\Lib">
+      <UniqueIdentifier>{af8746ab-9461-4c28-b352-2e05be6d8d68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework">
+      <UniqueIdentifier>{bda49488-8caa-477c-a9c9-893b2fb45417}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DirectX\Include\audiodefs.h">
+      <Filter>DirectX\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX\Include\comdecl.h">
+      <Filter>DirectX\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX\Include\D2D1.h">
+      <Filter>DirectX\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX\Include\D2D1Helper.h">
+      <Filter>DirectX\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX\Include\D2DBaseTypes.h">
+      <Filter>DirectX\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX\Include\D2Derr.h">
+      <Filter>DirectX\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX\Include\d3d9.h">
+      <Filter>DirectX\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX\Include\d3d9caps.h">
+      <Filter>DirectX\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX\Include\d3d9types.h">
+      <Filter>DirectX\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX\Include\D3D10.h">
+      <Filter>DirectX\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX\Include\D3D10_1.h">
+      <Filter>DirectX\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX\Include\D3D10_1shader.h">
+      <Filter>DirectX\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX\Include\D3D10effect.h">
+      <Filter>DirectX\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX\Include\d3d10misc.h">
+      <Filter>DirectX\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX\Include\d3d10sdklayers.h">
+      <Filter>DirectX\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX\Include\D3D10shader.h">
+      <Filter>DirectX\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX\Include\D3D11.h">
+      <Filter>DirectX\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX\Include\D3D11SDKLayers.h">
+      <Filter>DirectX\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX\Include\D3D11Shader.h">
+      <Filter>DirectX\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX\Include\D3Dcommon.h">
+      <Filter>DirectX\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX\Include\D3Dcompiler.h">
+      <Filter>DirectX\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX\Include\D3DCSX.h">
+      <Filter>DirectX\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX\Include\d3dx9.h">
+      <Filter>DirectX\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX\Include\d3dx9anim.h">
+      <Filter>DirectX\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX\Include\d3dx9core.h">
+      <Filter>DirectX\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX\Include\d3dx9effect.h">
+      <Filter>DirectX\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX\Include\d3dx9math.h">
+      <Filter>DirectX\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX\Include\d3dx9mesh.h">
+      <Filter>DirectX\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX\Include\d3dx9shader.h">
+      <Filter>DirectX\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX\Include\d3dx9shape.h">
+      <Filter>DirectX\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX\Include\d3dx9tex.h">
+      <Filter>DirectX\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX\Include\d3dx9xof.h">
+      <Filter>DirectX\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX\Include\D3DX10.h">
+      <Filter>DirectX\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX\Include\d3dx10async.h">
+      <Filter>DirectX\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX\Include\D3DX10core.h">
+      <Filter>DirectX\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX\Include\D3DX10math.h">
+      <Filter>DirectX\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX\Include\D3DX10mesh.h">
+      <Filter>DirectX\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX\Include\D3DX10tex.h">
+      <Filter>DirectX\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX\Include\D3DX11.h">
+      <Filter>DirectX\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX\Include\D3DX11async.h">
+      <Filter>DirectX\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX\Include\D3DX11core.h">
+      <Filter>DirectX\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX\Include\D3DX11tex.h">
+      <Filter>DirectX\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX\Include\Dcommon.h">
+      <Filter>DirectX\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX\Include\dinput.h">
+      <Filter>DirectX\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX\Include\dinputd.h">
+      <Filter>DirectX\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX\Include\dsconf.h">
+      <Filter>DirectX\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX\Include\dsetup.h">
+      <Filter>DirectX\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX\Include\dsound.h">
+      <Filter>DirectX\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX\Include\DWrite.h">
+      <Filter>DirectX\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX\Include\dxdiag.h">
+      <Filter>DirectX\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX\Include\DxErr.h">
+      <Filter>DirectX\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX\Include\dxfile.h">
+      <Filter>DirectX\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX\Include\DXGI.h">
+      <Filter>DirectX\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX\Include\DXGIFormat.h">
+      <Filter>DirectX\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX\Include\DXGIType.h">
+      <Filter>DirectX\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX\Include\dxsdkver.h">
+      <Filter>DirectX\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX\Include\gameux.h">
+      <Filter>DirectX\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX\Include\PIXPlugin.h">
+      <Filter>DirectX\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX\Include\rmxfguid.h">
+      <Filter>DirectX\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX\Include\rmxftmpl.h">
+      <Filter>DirectX\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX\Include\rpcsal.h">
+      <Filter>DirectX\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX\Include\X3DAudio.h">
+      <Filter>DirectX\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX\Include\xact3.h">
+      <Filter>DirectX\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX\Include\xact3d3.h">
+      <Filter>DirectX\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX\Include\xact3wb.h">
+      <Filter>DirectX\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX\Include\XAPO.h">
+      <Filter>DirectX\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX\Include\XAPOBase.h">
+      <Filter>DirectX\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX\Include\XAPOFX.h">
+      <Filter>DirectX\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX\Include\XAudio2.h">
+      <Filter>DirectX\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX\Include\XAudio2fx.h">
+      <Filter>DirectX\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX\Include\XDSP.h">
+      <Filter>DirectX\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX\Include\XInput.h">
+      <Filter>DirectX\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX\Include\xma2defs.h">
+      <Filter>DirectX\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX\Include\xnamath.h">
+      <Filter>DirectX\Include</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DirectX\Include\D3DX_DXGIFormatConvert.inl">
+      <Filter>DirectX\Include</Filter>
+    </None>
+    <None Include="DirectX\Include\d3dx9math.inl">
+      <Filter>DirectX\Include</Filter>
+    </None>
+    <None Include="DirectX\Include\D3DX10math.inl">
+      <Filter>DirectX\Include</Filter>
+    </None>
+    <None Include="DirectX\Include\xnamathconvert.inl">
+      <Filter>DirectX\Include</Filter>
+    </None>
+    <None Include="DirectX\Include\xnamathmatrix.inl">
+      <Filter>DirectX\Include</Filter>
+    </None>
+    <None Include="DirectX\Include\xnamathmisc.inl">
+      <Filter>DirectX\Include</Filter>
+    </None>
+    <None Include="DirectX\Include\xnamathvector.inl">
+      <Filter>DirectX\Include</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="DirectX\Lib\d2d1.lib">
+      <Filter>DirectX\Lib</Filter>
+    </Library>
+    <Library Include="DirectX\Lib\d3d9.lib">
+      <Filter>DirectX\Lib</Filter>
+    </Library>
+    <Library Include="DirectX\Lib\d3d10.lib">
+      <Filter>DirectX\Lib</Filter>
+    </Library>
+    <Library Include="DirectX\Lib\d3d10_1.lib">
+      <Filter>DirectX\Lib</Filter>
+    </Library>
+    <Library Include="DirectX\Lib\d3d11.lib">
+      <Filter>DirectX\Lib</Filter>
+    </Library>
+    <Library Include="DirectX\Lib\d3dcompiler.lib">
+      <Filter>DirectX\Lib</Filter>
+    </Library>
+    <Library Include="DirectX\Lib\D3DCSX.lib">
+      <Filter>DirectX\Lib</Filter>
+    </Library>
+    <Library Include="DirectX\Lib\D3DCSXd.lib">
+      <Filter>DirectX\Lib</Filter>
+    </Library>
+    <Library Include="DirectX\Lib\d3dx9.lib">
+      <Filter>DirectX\Lib</Filter>
+    </Library>
+    <Library Include="DirectX\Lib\d3dx9d.lib">
+      <Filter>DirectX\Lib</Filter>
+    </Library>
+    <Library Include="DirectX\Lib\d3dx10.lib">
+      <Filter>DirectX\Lib</Filter>
+    </Library>
+    <Library Include="DirectX\Lib\d3dx10d.lib">
+      <Filter>DirectX\Lib</Filter>
+    </Library>
+    <Library Include="DirectX\Lib\d3dx11.lib">
+      <Filter>DirectX\Lib</Filter>
+    </Library>
+    <Library Include="DirectX\Lib\d3dx11d.lib">
+      <Filter>DirectX\Lib</Filter>
+    </Library>
+    <Library Include="DirectX\Lib\d3dxof.lib">
+      <Filter>DirectX\Lib</Filter>
+    </Library>
+    <Library Include="DirectX\Lib\dinput8.lib">
+      <Filter>DirectX\Lib</Filter>
+    </Library>
+    <Library Include="DirectX\Lib\dsetup.lib">
+      <Filter>DirectX\Lib</Filter>
+    </Library>
+    <Library Include="DirectX\Lib\dsound.lib">
+      <Filter>DirectX\Lib</Filter>
+    </Library>
+    <Library Include="DirectX\Lib\dwrite.lib">
+      <Filter>DirectX\Lib</Filter>
+    </Library>
+    <Library Include="DirectX\Lib\DxErr.lib">
+      <Filter>DirectX\Lib</Filter>
+    </Library>
+    <Library Include="DirectX\Lib\dxgi.lib">
+      <Filter>DirectX\Lib</Filter>
+    </Library>
+    <Library Include="DirectX\Lib\dxguid.lib">
+      <Filter>DirectX\Lib</Filter>
+    </Library>
+    <Library Include="DirectX\Lib\X3DAudio.lib">
+      <Filter>DirectX\Lib</Filter>
+    </Library>
+    <Library Include="DirectX\Lib\xapobase.lib">
+      <Filter>DirectX\Lib</Filter>
+    </Library>
+    <Library Include="DirectX\Lib\xapobased.lib">
+      <Filter>DirectX\Lib</Filter>
+    </Library>
+    <Library Include="DirectX\Lib\XAPOFX.lib">
+      <Filter>DirectX\Lib</Filter>
+    </Library>
+    <Library Include="DirectX\Lib\XInput.lib">
+      <Filter>DirectX\Lib</Filter>
+    </Library>
   </ItemGroup>
 </Project>
