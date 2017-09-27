@@ -17,11 +17,6 @@ int IWindow::getHeight ( ) const
 	return _height;
 }
 
-int IWindow::getFrameRate ( ) const
-{
-	return _fps;
-}
-
 HWND IWindow::getWindow ( ) const
 {
 	return _hWnd;

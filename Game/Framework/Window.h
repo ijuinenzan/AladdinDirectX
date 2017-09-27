@@ -10,9 +10,9 @@ NS_CV_FRAMEWORK_BEGIN
 class Window: public IWindow
 {
 public:
-	Window(HINSTANCE hInstance, LPCSTR className, int width, int height, int fps, int isFullScreen);
+	Window(HINSTANCE hInstance, LPCSTR className, int width, int height, int isFullScreen);
 
-	void initWindow ( ) override;
+	void initWindow () override;
 protected:
 	static HRESULT CALLBACK WinProc(HWND, UINT, WPARAM, LPARAM);
 };

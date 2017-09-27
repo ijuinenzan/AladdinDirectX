@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -76,6 +76,9 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
     </ClCompile>
+    <Link>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -111,7 +114,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Director.h" />
+    <ClInclude Include="Application.h" />
     <ClInclude Include="DirectX\Include\audiodefs.h" />
     <ClInclude Include="DirectX\Include\comdecl.h" />
     <ClInclude Include="DirectX\Include\D2D1.h" />
@@ -186,8 +189,9 @@
     <ClInclude Include="DirectX\Include\XInput.h" />
     <ClInclude Include="DirectX\Include\xma2defs.h" />
     <ClInclude Include="DirectX\Include\xnamath.h" />
-    <ClInclude Include="Framework\Application.h" />
     <ClInclude Include="Framework\Definitions.h" />
+    <ClInclude Include="Framework\Device.h" />
+    <ClInclude Include="Framework\Director.h" />
     <ClInclude Include="Framework\IWindow.h" />
     <ClInclude Include="Framework\Window.h" />
   </ItemGroup>
@@ -230,8 +234,9 @@
     <Library Include="DirectX\Lib\XInput.lib" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Director.cpp" />
-    <ClCompile Include="Framework\Application.cpp" />
+    <ClCompile Include="Application.cpp" />
+    <ClCompile Include="Framework\Device.cpp" />
+    <ClCompile Include="Framework\Director.cpp" />
     <ClCompile Include="Framework\IWindow.cpp" />
     <ClCompile Include="Framework\Window.cpp" />
     <ClCompile Include="main.cpp" />

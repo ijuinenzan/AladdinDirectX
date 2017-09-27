@@ -2,13 +2,12 @@
 
 US_CV_FRAMEWORK
 
-Window::Window ( HINSTANCE hInstance, LPCSTR windowClassName, int width, int height, int fps, int isFullScreen )
+Window::Window ( HINSTANCE hInstance, LPCSTR windowClassName, int width, int height, int isFullScreen )
 {
 	_hInstance = hInstance;
 	_windowClassName = windowClassName;
 	_width = width;
 	_height = height;
-	_fps = fps;
 	_isFullScreen = isFullScreen;
 }
 
@@ -27,7 +26,7 @@ void Window::initWindow ( )
 	wc.hCursor = LoadCursor(NULL, IDC_ARROW);
 	wc.hbrBackground = (HBRUSH)GetStockObject(WHITE_BRUSH);
 	wc.lpszMenuName = NULL;
-	wc.lpszClassName = _windowClassName;//
+	wc.lpszClassName = _windowClassName;
 	wc.hIconSm = NULL;
 
 	RegisterClassEx(&wc);
@@ -71,6 +70,4 @@ HRESULT Window::WinProc ( HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam )
 	default:
 		return DefWindowProc(hWnd, msg, wParam, lParam);
 	}
-
-	return 0;
 }

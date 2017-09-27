@@ -1,4 +1,4 @@
-#include "Framework/Application.h"
+#include "Application.h"
 
 US_CV_FRAMEWORK
 
@@ -8,5 +8,5 @@ int WINAPI WinMain(HINSTANCE hInstance,
 	int       nCmdShow)
 {
 	pApplication application = Application::getInstance();
-	application->run(hInstance, "Hello World");
+	application->run(hInstance, "Hello World", 60);
 }

@@ -14,7 +14,6 @@ public:
 	virtual bool isFullScreen() const;
 	virtual int getWidth() const;
 	virtual int getHeight() const;
-	virtual int getFrameRate() const;
 	virtual HWND getWindow() const;
 	virtual HINSTANCE getInstance() const;
 protected:
@@ -26,7 +25,6 @@ protected:
 
 	int _width;
 	int _height;
-	int _fps;
 };
 
 typedef IWindow* pWindow;
