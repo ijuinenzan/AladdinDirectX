@@ -15,6 +15,10 @@ public:
 	void release() const;
 	void stopGame();
 	void mainLoop();
+
+	pDevice getDevice() const;
+	LPD3DXSPRITE getSpriteHandler() const;
+
 	static Director* getInstance();
 
 	bool isGameRunning() const;
@@ -22,6 +26,7 @@ private:
 	static Director* _instance;
 
 	pDevice _device;
+	LPD3DXSPRITE _spriteHandler;
 	bool _isGameRunning;
 };
 

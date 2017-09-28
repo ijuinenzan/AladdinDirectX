@@ -9,6 +9,8 @@ void Director::init ( pWindow window )
 	_device = new Device();
 	_device->init(window);
 
+	D3DXCreateSprite(_device->getDevice(), &_spriteHandler);
+
 	_isGameRunning = true;
 }
 
@@ -16,6 +18,8 @@ void Director::release ( ) const
 {
 	_device->release();
 	delete _device;
+
+	_spriteHandler->Release();
 
 	delete _instance;
 	_instance = NULL;
@@ -40,6 +44,16 @@ void Director::mainLoop ( )
 	}
 #pragma endregion
 
+}
+
+pDevice Director::getDevice ( ) const
+{
+	return _device;
+}
+
+LPD3DXSPRITE Director::getSpriteHandler ( ) const
+{
+	return _spriteHandler;
 }
 
 Director* Director::getInstance ( )

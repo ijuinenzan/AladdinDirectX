@@ -33,6 +33,9 @@ typedef D3DXVECTOR2 Vec2;
 #define VECTOR2ZERO Vec2(0.0f, 0.0f)
 #define VECTOR2ONE  Vec2(1.0f, 1.0f)
 
+#define CV_WHITE D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f)
+#define CV_COLOR_KEY D3DXCOLOR(1.0f, 0.0f, 1.0f, 1.0f)
+
 #define NS_CV_FRAMEWORK		namespace FrameWork
 
 #define NS_CV_FRAMEWORK_BEGIN	{
