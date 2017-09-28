@@ -17,9 +17,6 @@ public:
 	virtual void init();
 
 	void updateSelf() override;
-private:
-	pSprite sprite1;
-	pSprite sprite2;
 };
 
 typedef Scene* pScene;
