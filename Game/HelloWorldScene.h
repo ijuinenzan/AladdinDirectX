@@ -17,7 +17,7 @@ public:
 	~HelloWorldScene();
 	
 	void init() override;
-	void update() override;
+	void updateSelf() override;
 private:
 	State _currentState;
 	FrameWork::Sprite* _testSprite;

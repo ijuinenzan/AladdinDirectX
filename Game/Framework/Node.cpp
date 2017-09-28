@@ -268,6 +268,10 @@ void Node::releaseSelf ( )
 
 }
 
+void Node::updateSelf ( )
+{
+}
+
 void Node::render ( )
 {
 	this->renderSelf();
@@ -335,6 +339,15 @@ Node* Node::getParent ( ) const
 vector<Node*> Node::getChildren ( ) const
 {
 	return _children;
+}
+
+void Node::update ( )
+{
+	this->updateSelf();
+	for(auto node: _children)
+	{
+		node->update();
+	}
 }
 
 void Node::updateChildPosition ( Vec2 delta )

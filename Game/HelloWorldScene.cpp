@@ -26,7 +26,7 @@ void HelloWorldScene::init ( )
 	_testSprite->addChild(sprite2, true, true);
 }
 
-void HelloWorldScene::update ( )
+void HelloWorldScene::updateSelf ( )
 {
 	auto dt = FrameWork::Director::getInstance (  )->getDeltaTime();
 	switch ( _currentState )

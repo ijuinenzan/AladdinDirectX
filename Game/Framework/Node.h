@@ -67,7 +67,7 @@ public:
 	virtual Node* getParent() const;
 	virtual vector<Node*> getChildren() const;
 
-	//virtual void update();
+	virtual void update();
 protected:
 	Vec2 _position;
 	Vec2 _scale;
@@ -87,6 +87,7 @@ protected:
 	virtual void renderSelf();
 	virtual void renderSelf(pViewport viewport);
 	virtual void releaseSelf();
+	virtual void updateSelf();
 };
 
 typedef Node* pNode;

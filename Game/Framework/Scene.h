@@ -16,7 +16,7 @@ public:
 
 	virtual void init();
 
-	virtual void update();
+	void updateSelf() override;
 private:
 	pSprite sprite1;
 	pSprite sprite2;
