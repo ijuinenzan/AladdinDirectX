@@ -1,8 +1,9 @@
 #ifndef __TEXTURE_H__
 #define __TEXTURE_H__
 
-#include "Framework/Definitions.h"
-#include "Framework/Director.h"
+#include "Definitions.h"
+#include "Viewport.h"
+#include "Director.h"
 
 NS_CV_FRAMEWORK
 NS_CV_FRAMEWORK_BEGIN
@@ -21,7 +22,7 @@ public:
 
 	void render(RECT* sourceRect, Vec2 position, Vec2 scale, float rotate, Vec2 origin, float zIndex = 0) const;
 
-	//void render(LPD3DXSPRITE spriteHandler, RECT* sourceRect, Viewport viewport, CV_Vector2 position, CV_Vector2 scale, float rotate, CV_Vector2 origin, float zIndex = 0);
+	void render(RECT* sourceRect, Viewport viewport, Vec2 position, Vec2 scale, float rotate, Vec2 origin, float zIndex = 0) const;
 
 	void setColor(D3DXCOLOR backColor);
 	D3DXCOLOR getColor() const;

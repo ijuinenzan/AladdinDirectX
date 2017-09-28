@@ -102,12 +102,12 @@ void Texture::render(RECT* sourceRect, Vec2 position, Vec2 scale, float rotate, 
 	spriteHandler->End();
 }
 
-//void Texture::render(RECT* sourceRect, Viewport viewport, Vec2 position, Vec2 scale, float rotate, Vec2 origin, float zIndex)
-//{
-//	Vec3 viewportPosition = viewport.getPositionInViewport(&Vec3(position.x, position.y, zIndex));
-//
-//	render(spriteHandler, sourceRect, Vec2(int(viewportPosition.x), int(viewportPosition.y)), scale, rotate, origin, zIndex);
-//}
+void Texture::render(RECT* sourceRect, Viewport viewport, Vec2 position, Vec2 scale, float rotate, Vec2 origin, float zIndex) const
+{
+	Vec3 viewportPosition = viewport.getPositionInViewport(&Vec3(position.x, position.y, zIndex));
+
+	render(sourceRect, Vec2(int(viewportPosition.x), int(viewportPosition.y)), scale, rotate, origin, zIndex);
+}
 
 void Texture::setColor(D3DXCOLOR backColor)
 {

@@ -22,12 +22,19 @@ public:
 	static Director* getInstance();
 
 	bool isGameRunning() const;
+
+	int getWindowWidth() const;
+	int getWindowHeight() const;
 private:
 	static Director* _instance;
 
 	pDevice _device;
 	LPD3DXSPRITE _spriteHandler;
 	bool _isGameRunning;
+	int _windowWidth;
+	int _windowHeight;
+
+	void render();
 };
 
 typedef Director* pDirector;

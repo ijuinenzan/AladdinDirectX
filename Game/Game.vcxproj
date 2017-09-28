@@ -193,7 +193,10 @@
     <ClInclude Include="Framework\Device.h" />
     <ClInclude Include="Framework\Director.h" />
     <ClInclude Include="Framework\IWindow.h" />
+    <ClInclude Include="Framework\Node.h" />
+    <ClInclude Include="Framework\Sprite.h" />
     <ClInclude Include="Framework\Texture.h" />
+    <ClInclude Include="Framework\Viewport.h" />
     <ClInclude Include="Framework\Window.h" />
   </ItemGroup>
   <ItemGroup>
@@ -239,7 +242,10 @@
     <ClCompile Include="Framework\Device.cpp" />
     <ClCompile Include="Framework\Director.cpp" />
     <ClCompile Include="Framework\IWindow.cpp" />
+    <ClCompile Include="Framework\Node.cpp" />
+    <ClCompile Include="Framework\Sprite.cpp" />
     <ClCompile Include="Framework\Texture.cpp" />
+    <ClCompile Include="Framework\Viewport.cpp" />
     <ClCompile Include="Framework\Window.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>

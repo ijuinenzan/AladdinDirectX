@@ -22,6 +22,7 @@ void Device::release ( ) const
 
 void Device::clearScreen ( ) const
 {
+	//_pDevice->Clear(0, NULL, D3DCLEAR_TARGET, 0x928761, 0.0f, 0);
 	_pDevice->ColorFill(_surface, NULL, D3DCOLOR_XRGB(0, 0, 0));
 }
 

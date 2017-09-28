@@ -1,8 +1,11 @@
 #include "Director.h"
+#include "Sprite.h"
 
 US_CV_FRAMEWORK
 
 pDirector Director::_instance = NULL;
+
+Sprite *sprite;
 
 void Director::init ( pWindow window )
 {
@@ -12,10 +15,17 @@ void Director::init ( pWindow window )
 	D3DXCreateSprite(_device->getDevice(), &_spriteHandler);
 
 	_isGameRunning = true;
+
+	_windowWidth = window->getWidth();
+	_windowHeight = window->getHeight();
+
+	sprite = new Sprite("test.png");
+	sprite->setScale(0.5);
 }
 
 void Director::release ( ) const
 {
+	sprite->release();
 	_device->release();
 	delete _device;
 
@@ -38,12 +48,15 @@ void Director::mainLoop ( )
 	if (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE))
 	{
 		if (msg.message == WM_QUIT)
+		{
 			stopGame();
+		}
 		TranslateMessage(&msg);
 		DispatchMessage(&msg);
 	}
 #pragma endregion
 
+	render();
 }
 
 pDevice Director::getDevice ( ) const
@@ -69,4 +82,28 @@ Director* Director::getInstance ( )
 bool Director::isGameRunning ( ) const
 {
 	return _isGameRunning;
+}
+
+int Director::getWindowWidth ( ) const
+{
+	return _windowWidth;
+}
+
+int Director::getWindowHeight ( ) const
+{
+	return _windowHeight;
+}
+
+void Director::render ( )
+{
+	auto device = Director::getInstance()->getDevice (  );
+	device->getDevice()->BeginScene();
+	device->clearScreen();
+	// main game's logic
+
+	sprite->render();
+
+	device->getDevice()->EndScene();
+
+	device->present();
 }
