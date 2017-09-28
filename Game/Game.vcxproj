@@ -194,10 +194,12 @@
     <ClInclude Include="Framework\Director.h" />
     <ClInclude Include="Framework\IWindow.h" />
     <ClInclude Include="Framework\Node.h" />
+    <ClInclude Include="Framework\Scene.h" />
     <ClInclude Include="Framework\Sprite.h" />
     <ClInclude Include="Framework\Texture.h" />
     <ClInclude Include="Framework\Viewport.h" />
     <ClInclude Include="Framework\Window.h" />
+    <ClInclude Include="HelloWorldScene.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DirectX\Include\D3DX10math.inl" />
@@ -243,10 +245,12 @@
     <ClCompile Include="Framework\Director.cpp" />
     <ClCompile Include="Framework\IWindow.cpp" />
     <ClCompile Include="Framework\Node.cpp" />
+    <ClCompile Include="Framework\Scene.cpp" />
     <ClCompile Include="Framework\Sprite.cpp" />
     <ClCompile Include="Framework\Texture.cpp" />
     <ClCompile Include="Framework\Viewport.cpp" />
     <ClCompile Include="Framework\Window.cpp" />
+    <ClCompile Include="HelloWorldScene.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

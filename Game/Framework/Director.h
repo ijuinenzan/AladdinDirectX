@@ -8,13 +8,15 @@
 NS_CV_FRAMEWORK
 NS_CV_FRAMEWORK_BEGIN
 
+class Scene;
+
 class Director
 {
 public:
-	void init(pWindow window);
+	void init(pWindow window, Scene* startScene);
 	void release() const;
 	void stopGame();
-	void mainLoop();
+	void mainLoop(float delta);
 
 	pDevice getDevice() const;
 	LPD3DXSPRITE getSpriteHandler() const;
@@ -25,6 +27,12 @@ public:
 
 	int getWindowWidth() const;
 	int getWindowHeight() const;
+
+	Scene* getRunningScene() const;
+
+	float getDeltaTime() const;
+
+	float getCurrentTime() const;
 private:
 	static Director* _instance;
 
@@ -33,8 +41,12 @@ private:
 	bool _isGameRunning;
 	int _windowWidth;
 	int _windowHeight;
+	float _interval;
+	float _currentTime;
 
-	void render();
+	Scene* _runningScene;
+
+	void render() const;
 };
 
 typedef Director* pDirector;

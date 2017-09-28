@@ -1,3 +1,6 @@
+#pragma warning(disable: 4244)
+#pragma warning(disable: 4715)
+
 #ifndef __DEFINITIONS_H__
 #define __DEFINITIONS_H__
 

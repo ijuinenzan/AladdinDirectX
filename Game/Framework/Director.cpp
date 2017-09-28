@@ -1,13 +1,11 @@
 #include "Director.h"
-#include "Sprite.h"
+#include "Scene.h"
 
 US_CV_FRAMEWORK
 
 pDirector Director::_instance = NULL;
 
-Sprite *sprite;
-
-void Director::init ( pWindow window )
+void Director::init ( pWindow window, Scene* startScene )
 {
 	_device = new Device();
 	_device->init(window);
@@ -19,13 +17,14 @@ void Director::init ( pWindow window )
 	_windowWidth = window->getWidth();
 	_windowHeight = window->getHeight();
 
-	sprite = new Sprite("test.png");
-	sprite->setScale(0.5);
+	_runningScene = startScene;
+	_runningScene->init();
+
+	_currentTime = 0;
 }
 
 void Director::release ( ) const
 {
-	sprite->release();
 	_device->release();
 	delete _device;
 
@@ -40,8 +39,10 @@ void Director::stopGame ( )
 	_isGameRunning = false;
 }
 
-void Director::mainLoop ( )
+void Director::mainLoop(float delta)
 {
+	_interval = delta;
+	_currentTime += delta;
 	MSG msg;
 
 #pragma region Translate Message
@@ -55,7 +56,7 @@ void Director::mainLoop ( )
 		DispatchMessage(&msg);
 	}
 #pragma endregion
-
+	_runningScene->update();
 	render();
 }
 
@@ -94,14 +95,32 @@ int Director::getWindowHeight ( ) const
 	return _windowHeight;
 }
 
-void Director::render ( )
+Scene* Director::getRunningScene ( ) const
+{
+	return _runningScene;
+}
+
+float Director::getDeltaTime ( ) const
+{
+	return _interval;
+}
+
+float Director::getCurrentTime ( ) const
+{
+	return _currentTime;
+}
+
+void Director::render () const
 {
 	auto device = Director::getInstance()->getDevice (  );
 	device->getDevice()->BeginScene();
 	device->clearScreen();
 	// main game's logic
 
-	sprite->render();
+	if(_runningScene!= NULL)
+	{
+		_runningScene->render();
+	}
 
 	device->getDevice()->EndScene();
 

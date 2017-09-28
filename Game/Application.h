@@ -2,11 +2,7 @@
 #define __APPLICATION_H__
 
 #include "Framework/Definitions.h"
-#include "Framework/Window.h"
 #include "Framework/Director.h"
-
-NS_CV_FRAMEWORK
-NS_CV_FRAMEWORK_BEGIN
 
 class Application
 {
@@ -24,11 +20,9 @@ private:
 
 	LARGE_INTEGER _animationInterval;
 
-	pWindow _window;
+	FrameWork::pWindow _window;
 };
 
 typedef Application* pApplication;
-
-NS_CV_FRAMEWORK_END
 
 #endif __APPLICATION_H__

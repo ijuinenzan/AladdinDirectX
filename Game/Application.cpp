@@ -1,6 +1,6 @@
 #include "Application.h"
-
-US_CV_FRAMEWORK
+#include "Framework/Window.h"
+#include "HelloWorldScene.h"
 
 pApplication Application::_instance = NULL;
 
@@ -16,15 +16,15 @@ Application* Application::getInstance ( )
 
 void Application::run ( HINSTANCE hInstance, LPCSTR applicationName, int fps)
 {
-	_window = new Window(hInstance, applicationName, WINDOW_WIDTH, WINDOW_HEIGHT, false);
+	_window = new FrameWork::Window(hInstance, applicationName, WINDOW_WIDTH, WINDOW_HEIGHT, false);
 	_window->initWindow();
 
 	setAnimationInterval(1.0 / fps);
 
-	auto director = Director::getInstance();
-	director->init(_window);
+	auto director = FrameWork::Director::getInstance();
+	director->init(_window, new HelloWorldScene);
 
-	//main message loop
+	//main loop
 	_LARGE_INTEGER last;
 	_LARGE_INTEGER now;
 
@@ -43,7 +43,7 @@ void Application::run ( HINSTANCE hInstance, LPCSTR applicationName, int fps)
 		if (interval >= _animationInterval.QuadPart)
 		{
 			last.QuadPart = now.QuadPart;
-			director->mainLoop();
+			director->mainLoop(float(interval)/freq.QuadPart);
 		}
 		else
 		{
@@ -57,7 +57,7 @@ void Application::run ( HINSTANCE hInstance, LPCSTR applicationName, int fps)
 				Sleep(waitMS);
 		}
 	}
-	Director::getInstance()->release();
+	FrameWork::Director::getInstance()->release();
 }
 
 void Application::setAnimationInterval ( float interval )
