@@ -16,7 +16,9 @@ public:
 
 	virtual void init();
 
-	void updateSelf() override;
+	void update() override;
+
+	static Scene* create();
 };
 
 typedef Scene* pScene;

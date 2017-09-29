@@ -15,6 +15,12 @@ void Scene::init ( )
 {
 }
 
-void Scene::updateSelf ( )
+void Scene::update ( )
 {
+}
+
+Scene* Scene::create ( )
+{
+	Scene* scene = new Scene;
+	return scene;
 }

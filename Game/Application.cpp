@@ -22,7 +22,7 @@ void Application::run ( HINSTANCE hInstance, LPCSTR applicationName, int fps)
 	setAnimationInterval(1.0 / fps);
 
 	auto director = FrameWork::Director::getInstance();
-	director->init(_window, new HelloWorldScene);
+	director->init(_window, HelloWorldScene::create (  ));
 
 	//main loop
 	_LARGE_INTEGER last;

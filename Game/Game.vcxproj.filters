@@ -285,6 +285,9 @@
     <ClInclude Include="HelloWorldScene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Framework\IState.h">
+      <Filter>Framework</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="DirectX\Include\D3DX_DXGIFormatConvert.inl">
@@ -428,6 +431,9 @@
     </ClCompile>
     <ClCompile Include="HelloWorldScene.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\IState.cpp">
+      <Filter>Framework</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

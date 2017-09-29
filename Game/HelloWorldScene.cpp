@@ -12,21 +12,27 @@ HelloWorldScene::~HelloWorldScene()
 {
 }
 
+HelloWorldScene* HelloWorldScene::create()
+{
+	auto scene = new HelloWorldScene;
+	return scene;
+}
+
 void HelloWorldScene::init ( )
 {
-	_testSprite = new FrameWork::Sprite("test.png");
+	_testSprite = FrameWork::Sprite::create("test.png");
 	_testSprite->setPosition(50, 50);
 	addChild(_testSprite);
 	_currentState = MOVING_RIGHT;
 
-	auto sprite2 = new FrameWork::Sprite("test.png");
+	auto sprite2 = FrameWork::Sprite::create("test.png");
 	sprite2->setOpacity(0.5f);
 	sprite2->setScale(1.3f);
 	sprite2->setPosition(0, 0);
 	_testSprite->addChild(sprite2, true, true);
 }
 
-void HelloWorldScene::updateSelf ( )
+void HelloWorldScene::update ( )
 {
 	auto dt = FrameWork::Director::getInstance (  )->getDeltaTime();
 	switch ( _currentState )

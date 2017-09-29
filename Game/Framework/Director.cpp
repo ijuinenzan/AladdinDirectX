@@ -32,6 +32,9 @@ void Director::release ( ) const
 
 	delete _instance;
 	_instance = NULL;
+
+	_runningScene->releaseNode();
+	delete _runningScene;
 }
 
 void Director::stopGame ( )
@@ -56,7 +59,7 @@ void Director::mainLoop(float delta)
 		DispatchMessage(&msg);
 	}
 #pragma endregion
-	_runningScene->update();
+	_runningScene->updateNode();
 	render();
 }
 
@@ -112,17 +115,16 @@ float Director::getCurrentTime ( ) const
 
 void Director::render () const
 {
-	auto device = Director::getInstance()->getDevice (  );
-	device->getDevice()->BeginScene();
-	device->clearScreen();
+	_device->getDevice()->BeginScene();
+	_device->clearScreen();
 	// main game's logic
 
 	if(_runningScene!= NULL)
 	{
-		_runningScene->render();
+		_runningScene->renderNode();
 	}
 
-	device->getDevice()->EndScene();
+	_device->getDevice()->EndScene();
 
-	device->present();
+	_device->present();
 }

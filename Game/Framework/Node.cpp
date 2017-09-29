@@ -15,13 +15,14 @@ Node::~Node()
 {
 }
 
-void Node::release ( )
+void Node::releaseNode ( )
 {
 	for(auto node: _children)
 	{
-		node->release();
+		node->releaseNode();
+		delete node;
 	}
-	releaseSelf();
+	release();
 }
 
 Vec2 Node::getPosition ( )
@@ -254,39 +255,45 @@ float Node::getZIndex ( )
 	return _zIndex;
 }
 
-void Node::renderSelf ( )
-{
-
-}
-
-void Node::renderSelf ( pViewport viewport )
-{
-}
-
-void Node::releaseSelf ( )
-{
-
-}
-
-void Node::updateSelf ( )
-{
-}
-
 void Node::render ( )
 {
-	this->renderSelf();
-	for(auto node: _children)
-	{
-		node->render();
-	}
+
 }
 
 void Node::render ( pViewport viewport )
 {
-	this->renderSelf(viewport);
+}
+
+void Node::release ( )
+{
+
+}
+
+void Node::update ( )
+{
+}
+
+Node* Node::create ( )
+{
+	Node* node = new Node;
+	return node;
+}
+
+void Node::renderNode ( )
+{
+	this->render();
+	for(auto node: _children)
+	{
+		node->renderNode();
+	}
+}
+
+void Node::renderNode ( pViewport viewport )
+{
+	this->render(viewport);
 	for (auto node : _children)
 	{
-		node->render(viewport);
+		node->renderNode(viewport);
 	}
 }
 
@@ -341,12 +348,12 @@ vector<Node*> Node::getChildren ( ) const
 	return _children;
 }
 
-void Node::update ( )
+void Node::updateNode ( )
 {
-	this->updateSelf();
+	this->update();
 	for(auto node: _children)
 	{
-		node->update();
+		node->updateNode();
 	}
 }
 

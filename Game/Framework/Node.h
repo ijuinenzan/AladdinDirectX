@@ -13,7 +13,7 @@ public:
 	Node();
 	~Node();
 
-	virtual void release();
+	virtual void releaseNode();
 
 	virtual Vec2 getPosition();
 	virtual float getPositionX();
@@ -59,15 +59,17 @@ public:
 	virtual void setZIndex(float z);
 	virtual float getZIndex();
 
-	virtual void render();
-	virtual void render(pViewport viewport);
+	virtual void renderNode();
+	virtual void renderNode(pViewport viewport);
 
 	virtual void addChild(Node* node, bool willUpdatePosition = false, bool willUpdateScale = false);
 
 	virtual Node* getParent() const;
 	virtual vector<Node*> getChildren() const;
 
-	virtual void update();
+	virtual void updateNode();
+
+	static Node* create();
 protected:
 	Vec2 _position;
 	Vec2 _scale;
@@ -84,10 +86,10 @@ protected:
 	void updateChildPosition(Vec2 delta);
 	void updateChildScale(Vec2 delta);
 
-	virtual void renderSelf();
-	virtual void renderSelf(pViewport viewport);
-	virtual void releaseSelf();
-	virtual void updateSelf();
+	virtual void render();
+	virtual void render(pViewport viewport);
+	virtual void release();
+	virtual void update();
 };
 
 typedef Node* pNode;

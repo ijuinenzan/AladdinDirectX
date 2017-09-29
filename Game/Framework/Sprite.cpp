@@ -2,24 +2,13 @@
 
 US_CV_FRAMEWORK
 
-Sprite::Sprite(LPCSTR filePath, int zIndex)
+Sprite::Sprite()
 {
 	_origin = Vec2(0.5f, 0.5f);
 	_scale = Vec2(1.0f, 1.0f);
 	_localScale = Vec2(1.0f, 1.0f);
-	_zIndex = zIndex;
+	_zIndex = 0;
 	_rotate = 0.0f;
-
-	auto result = _texture.loadFromFile(filePath);
-	if(result != D3D_OK)
-	{
-		throw exception("Cannot create texture");
-	}
-
-	_textureWidth = _texture.getWidth();
-	_textureHeight = _texture.getHeight();
-
-	setFrameRect();
 }
 
 
@@ -27,12 +16,12 @@ Sprite::~Sprite()
 {
 }
 
-void Sprite::releaseSelf ( )
+void Sprite::release ( )
 {
 	_texture.release();
 }
 
-void Sprite::renderSelf ( )
+void Sprite::render ( )
 {
 	_texture.render(
 		&_frameRect,
@@ -44,7 +33,7 @@ void Sprite::renderSelf ( )
 	);
 }
 
-void Sprite::renderSelf ( pViewport viewport )
+void Sprite::render ( pViewport viewport )
 {
 	_texture.render(
 		&_frameRect,
@@ -119,6 +108,26 @@ void Sprite::setColor ( D3DXCOLOR color )
 D3DXCOLOR Sprite::getColor ( ) const
 {
 	return _color;
+}
+
+Sprite* Sprite::create (LPCSTR filePath, int zIndex)
+{
+	Sprite* sprite = new Sprite;
+
+	auto result = sprite->_texture.loadFromFile(filePath);
+	if (result != D3D_OK)
+	{
+		throw exception("Cannot create texture");
+	}
+
+	sprite->_zIndex = zIndex;
+
+	sprite->_textureWidth = sprite->_texture.getWidth();
+	sprite->_textureHeight = sprite->_texture.getHeight();
+
+	sprite->setFrameRect();
+
+	return sprite;
 }
 
 void Sprite::setFrameRect ( )

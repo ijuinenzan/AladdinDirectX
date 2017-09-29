@@ -192,6 +192,7 @@
     <ClInclude Include="Framework\Definitions.h" />
     <ClInclude Include="Framework\Device.h" />
     <ClInclude Include="Framework\Director.h" />
+    <ClInclude Include="Framework\IState.h" />
     <ClInclude Include="Framework\IWindow.h" />
     <ClInclude Include="Framework\Node.h" />
     <ClInclude Include="Framework\Scene.h" />
@@ -243,6 +244,7 @@
     <ClCompile Include="Application.cpp" />
     <ClCompile Include="Framework\Device.cpp" />
     <ClCompile Include="Framework\Director.cpp" />
+    <ClCompile Include="Framework\IState.cpp" />
     <ClCompile Include="Framework\IWindow.cpp" />
     <ClCompile Include="Framework\Node.cpp" />
     <ClCompile Include="Framework\Scene.cpp" />

@@ -11,10 +11,10 @@ NS_CV_FRAMEWORK_BEGIN
 class Sprite: public Node
 {
 public:
-	Sprite(LPCSTR filePath, int zIndex = 0);
+	Sprite();
 	~Sprite();
 	
-	void releaseSelf() override;
+	void release() override;
 
 	void setFrameRect(RECT rect);
 	void setFrameRect(float top, float right, float bottom, float left);
@@ -30,6 +30,8 @@ public:
 
 	void setColor(D3DXCOLOR color);
 	D3DXCOLOR getColor() const;
+
+	static Sprite* create(LPCSTR filePath, int zIndex = 0);
 private:
 	Texture _texture;
 	float _opacity;
@@ -42,8 +44,8 @@ private:
 
 	void setFrameRect();
 
-	void renderSelf() override;
-	void renderSelf(pViewport viewport) override;
+	void render() override;
+	void render(pViewport viewport) override;
 };
 
 typedef Sprite* pSprite;
