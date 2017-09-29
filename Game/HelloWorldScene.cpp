@@ -23,7 +23,7 @@ void HelloWorldScene::init ( )
 	_testSprite = FrameWork::Sprite::create("test.png");
 	_testSprite->setPosition(50, 50);
 	addChild(_testSprite);
-	_currentState = MOVING_RIGHT;
+	_currentState = MOVING_DOWN;
 
 	auto sprite2 = FrameWork::Sprite::create("test.png");
 	sprite2->setOpacity(0.5f);
@@ -40,25 +40,25 @@ void HelloWorldScene::update ( )
 	case MOVING_DOWN:
 		if(_testSprite->getPositionY (  ) > FrameWork::Director::getInstance (  )->getWindowHeight (  ))
 		{
-			_currentState = MOVING_LEFT;
+			_currentState = MOVING_RIGHT;
 		}
 		break;
 	case MOVING_UP:
 		if (_testSprite->getPositionY() < 0)
 		{
-			_currentState = MOVING_RIGHT;
+			_currentState = MOVING_LEFT;
 		}
 		break;
 	case MOVING_RIGHT:
 		if (_testSprite->getPositionX() > FrameWork::Director::getInstance()->getWindowWidth())
 		{
-			_currentState = MOVING_DOWN;
+			_currentState = MOVING_UP;
 		}
 		break;
 	case MOVING_LEFT:
 		if (_testSprite->getPositionX() <0)
 		{
-			_currentState = MOVING_UP;
+			_currentState = MOVING_DOWN;
 		}
 		break;
 	}

@@ -33,8 +33,8 @@ void Director::release ( ) const
 	delete _instance;
 	_instance = NULL;
 
-	_runningScene->releaseNode();
-	delete _runningScene;
+	//_runningScene->releaseNode();
+	//delete _runningScene;
 }
 
 void Director::stopGame ( )

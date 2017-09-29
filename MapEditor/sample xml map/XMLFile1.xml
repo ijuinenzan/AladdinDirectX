@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Tilesmap id ="0" name="Stage1" columns="20" rows="20" tileWidth="20" tileHeight="20">
+  <TileSets>
+    <TileSet>
+      <TileSet id="0" source="house.jpg"></TileSet>
+      <TileSet id="1" source="dog.jpg"></TileSet>
+      <TileSet id="2" source="cat.jpg"></TileSet>
+      <TileSet id="3" source="pig.jpg"></TileSet>
+    </TileSet>
+  </TileSets>
+  <MatrixIndex>
+    <Row id="0">
+      0 0 0 1 2 3 0 4 1 2 3 0
+    </Row>
+    <Row id="1">
+      1 2 3 4 4 3 2 1 2 2 3 4
+    </Row>
+    <Row id="2">
+      1 1 1 1 2 2 2 2 3 3 3 3
+    </Row>
+    <Row id="3">
+      0 0 0 1 2 3 0 4 1 2 3 0
+    </Row>
+    <Row id="4">
+      3 3 2 2 1 2 2 3 3 4 1 0
+    </Row>
+  </MatrixIndex>
+  <Objects>
+    <Object id="0" name="SpawnPoint" col="1" row="1">
+      <Property id="0" name="isDead" type="BOOLEAN" DefaultValue="False"></Property>
+      <Property id="1" name="isBroken" type="BOOLEAN" DefaultValue="True"></Property>
+    </Object>
+    <Object id="1" name="EndPoint" col="20" row="20">
+      <Property id="0" name="Bullet" type="INT" DefaultValue="20"></Property>
+    </Object>
+    <Object id="2" name="Treasure" col="10" row="10">
+      <Property id="1" name="Armor" type="INT" DefaultValue="200"></Property>
+    </Object>
+  </Objects>
+</Tilesmap>
