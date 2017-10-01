@@ -2,24 +2,24 @@
 
 public class Class1
 {
-    private string _id;
+    private int _id;
     private string _path;
-    private List<Property> _properties;
+    private int _layerId;
 
 
-    public List<Property> Properties
+    public int LayerId
     {
         get
         {
-            return _properties;
+            return _layerId;
         }
         set
         {
-            _properties = value;
+            _layerId = value;
         }
     }
 
-    public string Id
+    public int Id
     {
         get
         {

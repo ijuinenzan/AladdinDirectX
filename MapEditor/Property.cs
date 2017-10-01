@@ -2,12 +2,12 @@
 
 public class Property
 {
-    private string _id;
+    private int _id;
     private string _name;
     private string _type;
     private string _defaultValue;
 
-    public string Id
+    public int Id
     {
         get
         {

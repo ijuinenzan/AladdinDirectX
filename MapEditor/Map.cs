@@ -1,5 +1,4 @@
 ﻿using System;
-using 
 
 public class Map
 {
@@ -7,30 +6,18 @@ public class Map
     private int _height;
     private int _tileWidth;
     private int _tileHeight;
-    private TileSet[,] _tileSets;
-    private Object[,] _objects;
 
-    public Object[,] Objects
+    private List<Layer> _layers;
+
+    public List<Layer> Layers
     {
         get
         {
-            return _objects;
+            return _layers;
         }
         set
         {
-            _objects = value;
-        }
-    }
-
-    public TileSet[,] TileSets
-    {
-        get
-        {
-            return _tileSets;
-        }
-        set
-        {
-            _tileSets = value;
+            _layers = value;
         }
     }
 
