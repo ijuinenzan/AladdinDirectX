@@ -1,0 +1,56 @@
+<Map columns="20" rows="20" tileWidth="20" tileHeight="20">
+
+	<Images>
+		<Image id="0" source="house.jpg">
+			<TileSet id="0"></TileSet>
+			<TileSet id="1"></TileSet>
+			<TileSet id="2"></TileSet>
+			<TileSet id="3"></TileSet>
+		</Image>
+		<Image id="1" source="dog.jpg">
+			<TileSet id="4"></TileSet>
+			<TileSet id="5"></TileSet>
+			<TileSet id="6"></TileSet>
+			<TileSet id="7"></TileSet>
+		</Image>
+		<Image id="2" source="cat.jpg">
+			<TileSet id="8"></TileSet>
+			<TileSet id="9"></TileSet>
+			<TileSet id="10"></TileSet>
+			<TileSet id="11"></TileSet>
+		</Image>
+	</Images>
+	
+	
+	<Layer order="1">
+		<MatrixIndex>
+			<Row id="0">
+				0 0 0 1 2 3 0 4 1 2 3 0 
+			</Row>
+			<Row id="1">
+				1 2 3 4 4 3 2 1 2 2 3 4 
+			</Row>
+			<Row id="2">
+				1 1 1 1 2 2 2 2 3 3 3 3
+			</Row>
+			<Row id="3">
+				0 0 0 1 2 3 0 4 1 2 3 0 
+			</Row>
+			<Row id="4">
+				3 3 2 2 1 2 2 3 3 4 1 0
+			</Row>
+		</MatrixIndex>
+		<Objects>
+			<Object id="0" name="SpawnPoint" width="1" height="1" x="0" y="0">
+				<Property id="0" name="isDead" type="BOOLEAN" DefaultValue="False"></Property>
+				<Property id="1" name="isBroken" type="BOOLEAN" DefaultValue="True"></Property>
+			</Object>
+			<Object id="1" name="EndPoint" width="20" height="20" x="0" y="0">
+				<Property id="0" name="Bullet" type="INT" DefaultValue="20"></Property>
+			</Object>
+			<Object id="2" name="Treasure" width="10" height="10" x="0" y="0">
+				<Property id="1" name="Armor" type="INT" DefaultValue="200"></Property>
+			</Object>
+		</Objects>
+	</Layer>
+</Map>

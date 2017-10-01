@@ -1,34 +1,62 @@
 ﻿using System;
+using System.Collections.Generic;
 
 public class Object
 {
     private int _id;
-    private int _row;
+    private int _width;
+    private int _height;
+    private int _x;
+    private int _y;
     private int _col;
     private string _name;
     private List<Property> _properties;
 
-    public int Col
+    public int X
     {
         get
         {
-            return _col;
+            return _x;
         }
         set
         {
-            _col = value;
+            _x = value;
         }
     }
 
-    public int Row
+    public int Y
     {
         get
         {
-            return _row;
+            return _y;
         }
         set
         {
-            _row = value;
+            _y = value;
+        }
+    }
+
+    public int Height
+    {
+        get
+        {
+            return _height;
+        }
+        set
+        {
+            _height = value;
+        }
+    }
+
+    public int Width
+    {
+        get
+        {
+            return _width;
+        }
+        set
+        {
+            _width = value;
         }
     }
 

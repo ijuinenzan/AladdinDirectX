@@ -1,9 +1,8 @@
 ﻿using System;
 
-public class Class1
+public class TileSet
 {
     private int _id;
-    private string _path;
     private int _layerId;
 
 
@@ -28,18 +27,6 @@ public class Class1
         set
         {
             _id = value;
-        }
-    }
-
-    public string Path
-    {
-        get
-        {
-            return _path;
-        }
-        set
-        {
-            _path = value;
         }
     }
 }

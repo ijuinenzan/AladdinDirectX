@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 public class Layer
 {
@@ -6,7 +7,7 @@ public class Layer
     private List<Object> _objects;
 
     private int _order;
-    private int _mapId;
+
 
     public int Order
     {
@@ -19,17 +20,7 @@ public class Layer
             _order = value;
         }
     }
-    public int MapId
-    {
-        get
-        {
-            return _mapId;
-        }
-        set
-        {
-            _mapId = value;
-        }
-    }
+
     public Dictionary<int, TileSet> TileSets
     {
         get
