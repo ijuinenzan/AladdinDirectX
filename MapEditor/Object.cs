@@ -8,9 +8,21 @@ public class Object
     private int _height;
     private int _x;
     private int _y;
-    private int _col;
     private string _name;
     private List<Property> _properties;
+    private int _type;
+
+    public int Type
+    {
+        get
+        {
+            return _type;
+        }
+        set
+        {
+            _type = value;
+        }
+    }
 
     public int X
     {

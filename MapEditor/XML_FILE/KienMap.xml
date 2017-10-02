@@ -41,14 +41,14 @@
 			</Row>
 		</MatrixIndex>
 		<Objects>
-			<Object id="0" name="SpawnPoint" width="1" height="1" x="0" y="0">
+			<Object id="0" type="1" name="SpawnPoint" width="1" height="1" x="0" y="0">
 				<Property id="0" name="isDead" type="BOOLEAN" DefaultValue="False"></Property>
 				<Property id="1" name="isBroken" type="BOOLEAN" DefaultValue="True"></Property>
 			</Object>
-			<Object id="1" name="EndPoint" width="20" height="20" x="0" y="0">
+			<Object id="1" type="1" name="EndPoint" width="20" height="20" x="0" y="0">
 				<Property id="0" name="Bullet" type="INT" DefaultValue="20"></Property>
 			</Object>
-			<Object id="2" name="Treasure" width="10" height="10" x="0" y="0">
+			<Object id="2" type="2" name="Treasure" width="10" height="10" x="0" y="0">
 				<Property id="1" name="Armor" type="INT" DefaultValue="200"></Property>
 			</Object>
 		</Objects>
