@@ -1,19 +1,19 @@
 <Map columns="20" rows="20" tileWidth="20" tileHeight="20">
 
 	<Images>
-		<Image id="0" source="house.jpg">
+		<Image id="0" path="house.jpg">
 			<TileSet id="0"></TileSet>
 			<TileSet id="1"></TileSet>
 			<TileSet id="2"></TileSet>
 			<TileSet id="3"></TileSet>
 		</Image>
-		<Image id="1" source="dog.jpg">
+		<Image id="1" path="dog.jpg">
 			<TileSet id="4"></TileSet>
 			<TileSet id="5"></TileSet>
 			<TileSet id="6"></TileSet>
 			<TileSet id="7"></TileSet>
 		</Image>
-		<Image id="2" source="cat.jpg">
+		<Image id="2" path="cat.jpg">
 			<TileSet id="8"></TileSet>
 			<TileSet id="9"></TileSet>
 			<TileSet id="10"></TileSet>
