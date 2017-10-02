@@ -9,19 +9,6 @@ namespace MapEditor
     class Image
     {
         private string _path;
-        private int _id;
-
-        public int Id
-        {
-            get
-            {
-                return _id;
-            }
-            set
-            {
-                _id = value;
-            }
-        }
 
         public string Path
         {

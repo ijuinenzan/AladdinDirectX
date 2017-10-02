@@ -1,27 +1,11 @@
 <Map columns="20" rows="20" tileWidth="20" tileHeight="20">
 
-	<Images>
-		<Image id="0" path="house.jpg">
-			<TileSet id="0"></TileSet>
-			<TileSet id="1"></TileSet>
-			<TileSet id="2"></TileSet>
-			<TileSet id="3"></TileSet>
-		</Image>
-		<Image id="1" path="dog.jpg">
-			<TileSet id="4"></TileSet>
-			<TileSet id="5"></TileSet>
-			<TileSet id="6"></TileSet>
-			<TileSet id="7"></TileSet>
-		</Image>
-		<Image id="2" path="cat.jpg">
-			<TileSet id="8"></TileSet>
-			<TileSet id="9"></TileSet>
-			<TileSet id="10"></TileSet>
-			<TileSet id="11"></TileSet>
-		</Image>
-	</Images>
-	
-	
+  <Image path="cat.jpg">
+    <TileSet id="0"></TileSet>
+    <TileSet id="1"></TileSet>
+    <TileSet id="2"></TileSet>
+    <TileSet id="3"></TileSet>
+  </Image>
 	<Layer order="1">
 		<MatrixIndex>
 			<Row id="0">
