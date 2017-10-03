@@ -7,6 +7,15 @@ public class Property
     private string _type;
     private string _defaultValue;
 
+    public Property Clone()
+    {
+        Property a = new Property();
+        a._name = _name;
+        a._type = _type;
+        a._id = _id;
+        a._defaultValue = _defaultValue;
+        return a;
+    }
     public int Id
     {
         get

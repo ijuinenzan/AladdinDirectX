@@ -12,6 +12,26 @@ public class Object
     private List<Property> _properties;
     private int _type;
 
+    public Object Clone()
+    {
+        Object a = new Object();
+        a._width = _width;
+        a._height = _height;
+        a._name = _name;
+        a._x = _x;
+        a._y = _y;
+        a._type = _type;
+        a._properties = _properties;
+        a._id = _id;
+
+        return a;
+    }
+
+    public Object()
+    {
+        _properties = new List<Property>();
+    }
+
     public int Type
     {
         get

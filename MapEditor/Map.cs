@@ -3,12 +3,32 @@ using System.Collections.Generic;
 
 public class Map
 {
-    private int _columns;
-    private int _rows;
+    private int _width;
+    private int _height;
     private int _tileWidth;
     private int _tileHeight;
 
     private List<Layer> _layers;
+
+    public Map Clone()
+    {
+        Map a = new Map();
+        a._width = _width;
+        a._height = _height;
+        a._tileHeight = _tileHeight;
+        a._tileWidth = _tileWidth;
+        a._layers = new List<Layer>();
+        foreach (var layer in _layers)
+        {
+            a._layers.Add(layer.Clone());
+        }
+        return a;
+    }
+
+    public Map()
+    {
+        _layers = new List<Layer>();
+    }
 
     public List<Layer> Layers
     {
@@ -22,27 +42,27 @@ public class Map
         }
     }
 
-    public int Columns
+    public int Width
     {
         get
         {
-            return _columns;
+            return _width;
         }
         set
         {
-            _columns = value;
+            _width = value;
         }
     }
 
-    public int Rows
+    public int Height
     {
         get
         {
-            return _rows;
+            return _height;
         }
         set
         {
-            _rows = value;
+            _height = value;
         }
     }
 
