@@ -1,40 +1,25 @@
 <Map columns="20" rows="20" tileWidth="20" tileHeight="20">
-
-  <Image path="cat.jpg">
-    <TileSet id="0"></TileSet>
-    <TileSet id="1"></TileSet>
-    <TileSet id="2"></TileSet>
-    <TileSet id="3"></TileSet>
-  </Image>
-	<Layer order="1">
-		<MatrixIndex>
-			<Row id="0">
-				0 0 0 1 2 3 0 4 1 2 3 0 
-			</Row>
-			<Row id="1">
-				1 2 3 4 4 3 2 1 2 2 3 4 
-			</Row>
-			<Row id="2">
-				1 1 1 1 2 2 2 2 3 3 3 3
-			</Row>
-			<Row id="3">
-				0 0 0 1 2 3 0 4 1 2 3 0 
-			</Row>
-			<Row id="4">
-				3 3 2 2 1 2 2 3 3 4 1 0
-			</Row>
-		</MatrixIndex>
-		<Objects>
-			<Object id="0" type="1" name="SpawnPoint" width="1" height="1" x="0" y="0">
-				<Property id="0" name="isDead" type="BOOLEAN" DefaultValue="False"></Property>
-				<Property id="1" name="isBroken" type="BOOLEAN" DefaultValue="True"></Property>
-			</Object>
-			<Object id="1" type="1" name="EndPoint" width="20" height="20" x="0" y="0">
-				<Property id="0" name="Bullet" type="INT" DefaultValue="20"></Property>
-			</Object>
-			<Object id="2" type="2" name="Treasure" width="10" height="10" x="0" y="0">
-				<Property id="1" name="Armor" type="INT" DefaultValue="200"></Property>
-			</Object>
-		</Objects>
+  <Img path="cat.jpg">
+    <TileSet id="0" layerId="0"></TileSet>
+    <TileSet id="1" layerId="0"></TileSet>
+    <TileSet id="2" layerId="0"></TileSet>
+    <TileSet id="3" layerId="0"></TileSet>
+  </Img>
+	<Layer id="0" order="1">
+		<TileSets>
+      0 1 2 3
+		</TileSets>
 	</Layer>
+  <Objects>
+    <Object id="0" type="1" name="SpawnPoint" width="1" height="1" x="0" y="0">
+      <Property id="0" name="isDead" type="BOOLEAN" defaultValue="False"></Property>
+      <Property id="1" name="isBroken" type="BOOLEAN" defaultValue="True"></Property>
+    </Object>
+    <Object id="1" type="1" name="EndPoint" width="20" height="20" x="0" y="0">
+      <Property id="0" name="Bullet" type="INT" defaultValue="20"></Property>
+    </Object>
+    <Object id="2" type="2" name="Treasure" width="10" height="10" x="0" y="0">
+      <Property id="1" name="Armor" type="INT" defaultValue="200"></Property>
+    </Object>
+  </Objects>
 </Map>

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MapEditor
 {
-    class Image
+    class Img
     {
         private string _path;
 

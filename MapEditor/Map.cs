@@ -7,8 +7,21 @@ public class Map
     private int _height;
     private int _tileWidth;
     private int _tileHeight;
+    private Img _img;
 
     private List<Layer> _layers;
+
+    public Img Img
+    {
+        get
+        {
+            return _img;
+        }
+        set
+        {
+            _img = value;
+        }
+    }
 
     public Map Clone()
     {
@@ -28,6 +41,7 @@ public class Map
     public Map()
     {
         _layers = new List<Layer>();
+        _img = new Image ( );
     }
 
     public List<Layer> Layers
