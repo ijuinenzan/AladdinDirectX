@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 
+using MapEditor;
+
 public class Map
 {
-    private int _width;
-    private int _height;
+    private int _cols;
+    private int _rows;
     private int _tileWidth;
     private int _tileHeight;
     private Img _img;
@@ -26,8 +28,8 @@ public class Map
     public Map Clone()
     {
         Map a = new Map();
-        a._width = _width;
-        a._height = _height;
+        a._cols = _cols;
+        a._rows = _rows;
         a._tileHeight = _tileHeight;
         a._tileWidth = _tileWidth;
         a._layers = new List<Layer>();
@@ -41,7 +43,7 @@ public class Map
     public Map()
     {
         _layers = new List<Layer>();
-        _img = new Image ( );
+        _img = new Img (  );
     }
 
     public List<Layer> Layers
@@ -56,27 +58,27 @@ public class Map
         }
     }
 
-    public int Width
+    public int Cols
     {
         get
         {
-            return _width;
+            return _cols;
         }
         set
         {
-            _width = value;
+            _cols = value;
         }
     }
 
-    public int Height
+    public int Rows
     {
         get
         {
-            return _height;
+            return _rows;
         }
         set
         {
-            _height = value;
+            _rows = value;
         }
     }
 
