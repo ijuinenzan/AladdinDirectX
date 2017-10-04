@@ -19,7 +19,7 @@ namespace MapEditor
         }
 
         Map map = new Map();
-        Image image = new Image();
+        Img image = new Img();
         Layer layer = new Layer();
 
 
@@ -49,7 +49,7 @@ namespace MapEditor
                     //writer.WriteString("\n");
                     //write the root "Map"
                     writer.WriteStartElement("Map");
-                    writer.WriteAttributeString("columns", map.Columns.ToString());
+                    writer.WriteAttributeString("columns", map.Cols.ToString());
                     writer.WriteAttributeString("rows", map.Rows.ToString());
                     writer.WriteAttributeString("tileWidth", map.TileWidth.ToString());
                     writer.WriteAttributeString("tileHeight", map.TileHeight.ToString());
@@ -142,7 +142,7 @@ namespace MapEditor
                 //take info Map
                 XmlNode xmlMap = doc.SelectSingleNode("/Map");
                 Map map = new Map();
-                map.Columns = int.Parse(xmlMap.Attributes["columns"].Value.ToString());
+                map.Cols = int.Parse(xmlMap.Attributes["columns"].Value.ToString());
                 map.Rows = int.Parse(xmlMap.Attributes["rows"].Value.ToString());
                 map.TileWidth = int.Parse(xmlMap.Attributes["tileWidth"].Value.ToString());
                 map.TileHeight = int.Parse(xmlMap.Attributes["tileHeight"].Value.ToString());

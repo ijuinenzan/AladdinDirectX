@@ -9,25 +9,26 @@ public class Map
     private int _rows;
     private int _tileWidth;
     private int _tileHeight;
-    private Img _img;
+    private string _imageSource;
 
     private List<Layer> _layers;
 
-    public Img Img
+    public string ImageSource
     {
         get
         {
-            return _img;
+            return _imageSource;
         }
         set
         {
-            _img = value;
+            _imageSource = value;
         }
     }
 
     public Map Clone()
     {
         Map a = new Map();
+        a._imageSource = _imageSource;
         a._cols = _cols;
         a._rows = _rows;
         a._tileHeight = _tileHeight;
@@ -43,7 +44,6 @@ public class Map
     public Map()
     {
         _layers = new List<Layer>();
-        _img = new Img (  );
     }
 
     public List<Layer> Layers

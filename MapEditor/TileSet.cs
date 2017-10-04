@@ -1,15 +1,14 @@
 ﻿using System;
+using System.Drawing;
 
 public class TileSet
 {
     private int _id;
-    private int _layerId;
     private Image _image;
 
     public TileSet Clone()
     {
         TileSet a = new TileSet();
-        a._layerId = _layerId;
         a._image = (Image)_image.Clone();
         a._id = _id;
 
@@ -25,18 +24,6 @@ public class TileSet
         set
         {
             _image = value;
-        }
-    }
-
-    public int LayerId
-    {
-        get
-        {
-            return _layerId;
-        }
-        set
-        {
-            _layerId = value;
         }
     }
 

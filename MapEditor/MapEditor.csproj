@@ -51,7 +51,6 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Img.cs" />
     <Compile Include="Layer.cs" />
     <Compile Include="Map.cs" />
     <Compile Include="Object.cs" />

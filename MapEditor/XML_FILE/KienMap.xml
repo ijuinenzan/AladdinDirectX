@@ -1,14 +1,11 @@
-<Map columns="20" rows="20" tileWidth="20" tileHeight="20">
-  <Img path="cat.jpg">
-    <TileSet id="0" layerId="0"></TileSet>
-    <TileSet id="1" layerId="0"></TileSet>
-    <TileSet id="2" layerId="0"></TileSet>
-    <TileSet id="3" layerId="0"></TileSet>
-  </Img>
+<Map columns="20" rows="20" tileWidth="20" tileHeight="20" imageSource="cat.jpg">
 	<Layer id="0" order="1">
-		<TileSets>
-      0 1 2 3
-		</TileSets>
+    <TileSets>
+      <TileSet id="0"></TileSet>
+      <TileSet id="3"></TileSet>
+      <TileSet id="1"></TileSet>
+      <TileSet id="2"></TileSet>
+    </TileSets>
 	</Layer>
   <Objects>
     <Object id="0" type="1" name="SpawnPoint" width="1" height="1" x="0" y="0">
