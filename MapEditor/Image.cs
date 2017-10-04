@@ -4,23 +4,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MapEditor
+
+public class Image
 {
-    class Image
+    private string _path;
+
+    public string Path
     {
-        private string _path;
-
-        public string Path
+        get
         {
-            get
-            {
-                return _path;
-            }
-            set
-            {
-                _path = value;
-            }
+            return _path;
         }
-
+        set
+        {
+            _path = value;
+        }
     }
+
+    public Image Clone()
+    {
+        Image image = new Image();
+        return image;
+    }
+
 }
+

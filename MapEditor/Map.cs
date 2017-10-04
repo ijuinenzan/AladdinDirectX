@@ -3,8 +3,8 @@ using System.Collections.Generic;
 
 public class Map
 {
-    private int _width;
-    private int _height;
+    private int _columns;
+    private int _rows;
     private int _tileWidth;
     private int _tileHeight;
 
@@ -13,8 +13,8 @@ public class Map
     public Map Clone()
     {
         Map a = new Map();
-        a._width = _width;
-        a._height = _height;
+        a._columns = _columns;
+        a._rows = _rows;
         a._tileHeight = _tileHeight;
         a._tileWidth = _tileWidth;
         a._layers = new List<Layer>();
@@ -42,27 +42,27 @@ public class Map
         }
     }
 
-    public int Width
+    public int Columns
     {
         get
         {
-            return _width;
+            return _columns;
         }
         set
         {
-            _width = value;
+            _columns = value;
         }
     }
 
-    public int Height
+    public int Rows
     {
         get
         {
-            return _height;
+            return _rows;
         }
         set
         {
-            _height = value;
+            _rows = value;
         }
     }
 

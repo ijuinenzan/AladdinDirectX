@@ -10,7 +10,7 @@ public class TileSet
     {
         TileSet a = new TileSet();
         a._layerId = _layerId;
-        a._image = (Image)_image?.Clone();
+        a._image = (Image)_image.Clone();
         a._id = _id;
 
         return a;
