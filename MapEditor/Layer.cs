@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class Layer
 {
-    private Dictionary<int, TileSet> _tileSets;
+    private List <TileSet> _tileSets;
     private List<Object> _objects;
     private int _id;
     private int _order;
@@ -11,11 +11,11 @@ public class Layer
     public Layer Clone()
     {
         Layer a = new Layer();
-        a._tileSets = new Dictionary<int, TileSet>();
+        a._tileSets = new List < TileSet > ();
 
         foreach (var tileset in _tileSets)
         {
-            a._tileSets.Add(tileset.Key, tileset.Value.Clone());
+            a._tileSets.Add(tileset.Clone (  ));
         }
 
         a._id = _id;
@@ -26,7 +26,7 @@ public class Layer
 
     public Layer()
     {
-        _tileSets = new Dictionary<int, TileSet>();
+        _tileSets = new List < TileSet > ();
         _objects = new List<Object>();
     }
 
@@ -54,7 +54,7 @@ public class Layer
         }
     }
 
-    public Dictionary<int, TileSet> TileSets
+    public List <TileSet> TileSets
     {
         get
         {
