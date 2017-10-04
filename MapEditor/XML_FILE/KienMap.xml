@@ -1,12 +1,14 @@
 <Map columns="20" rows="20" tileWidth="20" tileHeight="20" imageSource="cat.jpg">
-  <Layer id="0" order="1">
-    <TileSets>
-      <TileSet id="0"></TileSet>
-      <TileSet id="3"></TileSet>
-      <TileSet id="1"></TileSet>
-      <TileSet id="2"></TileSet>
-    </TileSets>
-  </Layer>
+  <Layers>
+    <Layer id="0" order="1">
+      <TileSets>
+        <TileSet id="0"></TileSet>
+        <TileSet id="3"></TileSet>
+        <TileSet id="1"></TileSet>
+        <TileSet id="2"></TileSet>
+      </TileSets>
+    </Layer>
+  </Layers>
   <Objects>
     <Object id="0" type="1" name="SpawnPoint" width="1" height="1" x="0" y="0">
       <Property id="0" name="isDead" type="BOOLEAN" defaultValue="False"></Property>
