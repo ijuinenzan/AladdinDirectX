@@ -11,6 +11,7 @@ public class Map
     private int _tileHeight;
     private string _imageSource;
 
+    private List<Object> _objects;
     private List<Layer> _layers;
 
     public string ImageSource
@@ -34,6 +35,7 @@ public class Map
         a._tileHeight = _tileHeight;
         a._tileWidth = _tileWidth;
         a._layers = new List<Layer>();
+        a._objects = _objects;
         foreach (var layer in _layers)
         {
             a._layers.Add(layer.Clone());
@@ -44,6 +46,19 @@ public class Map
     public Map()
     {
         _layers = new List<Layer>();
+        _objects = new List<Object>();
+    }
+
+    public List<Object> Objects
+    {
+        get
+        {
+            return _objects;
+        }
+        set
+        {
+            _objects = value;
+        }
     }
 
     public List<Layer> Layers

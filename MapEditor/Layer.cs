@@ -4,7 +4,6 @@ using System.Collections.Generic;
 public class Layer
 {
     private List <TileSet> _tileSets;
-    private List<Object> _objects;
     private int _id;
     private int _order;
 
@@ -20,14 +19,12 @@ public class Layer
 
         a._id = _id;
         a._order = _order;
-        a._objects = _objects;
         return a;
     }
 
     public Layer()
     {
         _tileSets = new List < TileSet > ();
-        _objects = new List<Object>();
     }
 
     public int Id
@@ -63,17 +60,6 @@ public class Layer
         set
         {
             _tileSets = value;
-        }
-    }
-    public List<Object> Objects
-    {
-        get
-        {
-            return _objects;
-        }
-        set
-        {
-            _objects = value;
         }
     }
 }
