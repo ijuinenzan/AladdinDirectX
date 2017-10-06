@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Xml;
 
 public class Object
 {
@@ -25,6 +26,29 @@ public class Object
         a._id = _id;
 
         return a;
+    }
+
+    public Object LoadFromXML(XmlNode node)
+    {  
+        if (node.HasChildNodes)
+        {
+            
+            Property property = new Property();
+            foreach (XmlNode child in node.ChildNodes)
+            {
+                this.Id = int.Parse(child.Attributes["id"].Value);
+                this.Name = child.Attributes["name"].Value;
+                this.Height = int.Parse(child.Attributes["height"].Value);
+                this.Width = int.Parse(child.Attributes["width"].Value);
+                this.Type = int.Parse(child.Attributes["type"].Value);
+                this.X = int.Parse(child.Attributes["x"].Value);
+                this.Y = int.Parse(child.Attributes["y"].Value);
+                child.SelectNodes("/Map/Objects/Object/Property");
+                this.Properties.Add(property.LoadFromXML(child));
+            }
+            return this;
+        }
+        return null;
     }
 
     public Object()

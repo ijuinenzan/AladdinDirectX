@@ -19,8 +19,7 @@ namespace MapEditor
         }
 
         Map map = new Map();
-        Img image = new Img();
-        Layer layer = new Layer();
+        
 
 
         private void button1_Click(object sender, EventArgs e)
@@ -46,82 +45,77 @@ namespace MapEditor
                 {
 
                     writer.WriteStartDocument();
-                    //writer.WriteString("\n");
-                    //write the root "Map"
+
                     writer.WriteStartElement("Map");
                     writer.WriteAttributeString("columns", map.Cols.ToString());
                     writer.WriteAttributeString("rows", map.Rows.ToString());
                     writer.WriteAttributeString("tileWidth", map.TileWidth.ToString());
                     writer.WriteAttributeString("tileHeight", map.TileHeight.ToString());
-                    //writer.WriteEnd();
-                    //write the element Image
-                    writer.WriteStartElement("Image");
-                    writer.WriteAttributeString("path", image.Path);
-
-                    //write the element TileSet
-                    Dictionary<int, TileSet>.KeyCollection keyCollection = layer.TileSets.Keys;
-
-                    foreach (var key in keyCollection)
-                    {
-                        writer.WriteStartElement("TileSet");
-                        writer.WriteAttributeString("id=", key.ToString());
-                        writer.WriteEndElement(); //end the element TileSet
-                    }
-                    writer.WriteEndElement(); //end the element Image
+                    writer.WriteAttributeString("imageSource", map.ImageSource);
 
                     //write the element Layer
+                    writer.WriteStartElement("Layers");
                     foreach (var layer in map.Layers)
                     {
                         writer.WriteStartElement("Layer");
-                        writer.WriteAttributeString("order=", layer.Order.ToString());
-
-                        //write MatrixIndex
-                        writer.WriteStartElement("MatrixIndex");
-                        for (int i = 0; i < map.Rows; i++)
+                        writer.WriteAttributeString("id", layer.Id.ToString());
+                        writer.WriteAttributeString("order", layer.Order.ToString());
+                        writer.WriteStartElement("TileSets");
+                        foreach (var tileSet in layer.TileSets)
                         {
-                            writer.WriteStartElement("Row");
-                            writer.WriteAttributeString("id=", i.ToString());
-                            Dictionary<int, TileSet>.ValueCollection tileSetCollection = layer.TileSets.Values;
-                            foreach (var tileSet in layer.TileSets)
-                            {
-                                if (tileSet.Value.LayerId == i)
-                                {
-
-                                }
-                            }
-                            writer.WriteEndElement(); //  end the element Row
+                            writer.WriteStartElement("TileSet");
+                            writer.WriteAttributeString("id", tileSet.Id.ToString());
+                            writer.WriteEndElement(); // end element TileSet
                         }
-                        writer.WriteEndElement(); // end the element MatrixIndex
-
-                        //write element Objects
-                        writer.WriteStartElement("Objects");
-                        foreach (var obj in layer.Objects)
-                        {
-                            writer.WriteStartElement("Object");
-                            writer.WriteAttributeString("id=", obj.Id.ToString());
-                            writer.WriteAttributeString("type=", obj.Type.ToString());
-                            writer.WriteAttributeString("name=", obj.Name);
-                            writer.WriteAttributeString("width=", obj.Width.ToString());
-                            writer.WriteAttributeString("height=", obj.Height.ToString());
-                            writer.WriteAttributeString("x=", obj.X.ToString());
-                            writer.WriteAttributeString("y=", obj.Y.ToString());
-                            foreach (var property in obj.Properties)
-                            {
-                                writer.WriteStartElement("Property");
-                                writer.WriteAttributeString("id=", property.Id.ToString());
-                                writer.WriteAttributeString("name=", property.Name);
-                                writer.WriteAttributeString("type=", property.Type);
-                                writer.WriteAttributeString("DefaultValue=", property.DefaultValue);
-                                writer.WriteEndElement(); // end element Property
-                            }
-                            writer.WriteEndElement(); // end element Object
-                        }
-                        writer.WriteEndElement();// end element Objects
-                        writer.WriteEndElement();// end element Layer
+                        writer.WriteEndElement();
                     }
+                    writer.WriteEndElement();
+
+                    ////write MatrixIndex
+                    //writer.WriteStartElement("MatrixIndex");
+                    //for (int i = 0; i < map.Rows; i++)
+                    //{
+                    //    writer.WriteStartElement("Row");
+                    //    writer.WriteAttributeString("id=", i.ToString());
+                    //    Dictionary<int, TileSet>.ValueCollection tileSetCollection = layer.TileSets.Values;
+                    //    foreach (var tileSet in layer.TileSets)
+                    //    {
+                    //        if (tileSet.Value.LayerId == i)
+                    //        {
+
+                    //        }
+                    //    }
+                    //    writer.WriteEndElement(); //  end the element Row
+                    //}
+                    //writer.WriteEndElement(); // end the element MatrixIndex
+
+                    //write element Objects
+                    writer.WriteStartElement("Objects");
+                    foreach (var obj in map.Objects)
+                    {
+                        writer.WriteStartElement("Object");
+                        writer.WriteAttributeString("id", obj.Id.ToString());
+                        writer.WriteAttributeString("type", obj.Type.ToString());
+                        writer.WriteAttributeString("name", obj.Name);
+                        writer.WriteAttributeString("width", obj.Width.ToString());
+                        writer.WriteAttributeString("height", obj.Height.ToString());
+                        writer.WriteAttributeString("x", obj.X.ToString());
+                        writer.WriteAttributeString("y", obj.Y.ToString());
+                        foreach (var property in obj.Properties)
+                        {
+                            writer.WriteStartElement("Property");
+                            writer.WriteAttributeString("id", property.Id.ToString());
+                            writer.WriteAttributeString("name", property.Name);
+                            writer.WriteAttributeString("type", property.Type);
+                            writer.WriteAttributeString("DefaultValue", property.DefaultValue);
+                            writer.WriteEndElement(); // end element Property
+                        }
+                        writer.WriteEndElement(); // end element Object
+                    }
+                    writer.WriteEndElement();// end element Objects
                     writer.WriteEndElement(); // end element Map
-                    writer.WriteEndDocument();
                 }
+                
             }
         }
 
@@ -139,77 +133,17 @@ namespace MapEditor
                 XmlDocument doc = new XmlDocument();
                 doc.Load(openFileDialog1.FileName);
 
-                //take info Map
-                XmlNode xmlMap = doc.SelectSingleNode("/Map");
-                Map map = new Map();
-                map.Cols = int.Parse(xmlMap.Attributes["columns"].Value.ToString());
-                map.Rows = int.Parse(xmlMap.Attributes["rows"].Value.ToString());
-                map.TileWidth = int.Parse(xmlMap.Attributes["tileWidth"].Value.ToString());
-                map.TileHeight = int.Parse(xmlMap.Attributes["tileHeight"].Value.ToString());
-
-                //take info TileSet
-                XmlNodeList xmlLayer = doc.SelectNodes("/Layer");
-                XmlNode xmlImage = doc.SelectSingleNode("/Map/Image");
-                string path = xmlImage.Attributes["path"].Value.ToString();
-
-                //XmlNodeList xmlTilesetImage = doc.SelectSingleNode("/map/tileset/image");
-                //string name = xmlTilesetImage.Attributes["source"].Value.ToString();
-                //string[] arrSource = openFileDialog1.FileName.Split(new String[] { "\\" }, StringSplitOptions.RemoveEmptyEntries);
-                //arrSource[arrSource.Length - 1] = name;
-                //string source = "";
-                //for (int i = 0; i < arrSource.Length; i++)
-                //{
-                //    source += arrSource[i] + (i == (arrSource.Length - 1) ? "" : "\\");
-                //}
-                //tileset = new TileSet(name, source, int.Parse(xmlTileset.Attributes["tilewidth"].Value.ToString()), int.Parse(xmlTileset.Attributes["tileheight"].Value.ToString()));
-                //int width = int.Parse(xmlMap.Attributes["width"].Value.ToString());
-                //int height = int.Parse(xmlMap.Attributes["height"].Value.ToString());
-                //background = new Background(tileset, width, height);
-                //XmlNodeList arrBackground = doc.SelectNodes("/map/layer/data/tile");
-                //for (int i = 0; i < background.MapHeight; i++)
-                //    for (int j = 0; j < background.MapWidth; j++)
-                //    {
-                //        XmlNode tileId = arrBackground.Item(i * background.MapWidth + j).Attributes["gid"];
-                //        background[i, j] = int.Parse(tileId.Value.ToString());
-                //    }
-                //UpdatePanelTileSet();
-                ////try
-                ////{
-                //XmlNodeList objects = doc.SelectNodes("/map/objectgroup/object");
-                //if (objects.Count > 0)
-                //{
-                //    listObject.Clear();
-                //    lstObject.Items.Clear();
-                //    proObject.SelectedObject = null;
-                //    foreach (XmlNode obj in objects)
-                //    {
-                //        Objects newObject = new Objects(int.Parse(obj.Attributes["id"].Value), obj.Attributes["name"].Value, int.Parse(obj.Attributes["type"].Value), float.Parse(obj.Attributes["x"].Value), float.Parse(obj.Attributes["y"].Value), float.Parse(obj.Attributes["width"].Value), float.Parse(obj.Attributes["height"].Value));
-                //        if (obj.HasChildNodes)
-                //        {
-                //            XmlNodeList properties = obj.ChildNodes[0].ChildNodes;
-                //            if (properties.Count > 0)
-                //            {
-                //                foreach (XmlNode attribute in properties)
-                //                {
-                //                    newObject.Property.Add(attribute.Attributes["name"].Value, attribute.Attributes["value"].Value);
-                //                }
-                //            }
-                //        }
-                //        listObject.Add(newObject);
-                //        UpdateListObject(newObject);
-                //    }
-                //    Objects.count = int.Parse(objects.Item(objects.Count - 1).Attributes["id"].Value) + 1;
-                //}
-                ////}
-                ////catch (NullReferenceException)
-                ////{
-                ////    MessageBox.Show("Map nay chua co object");
-                ////}
-                //Draw();
-
+                XmlNode node = doc.SelectSingleNode("/Map");
+                map.LoadFromXML(node);
+                
             }
+            button1_Click(sender, e);
         }
 
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+           
+        }
     }
 }
 

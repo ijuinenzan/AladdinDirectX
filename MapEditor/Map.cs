@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Xml;
 
 using MapEditor;
 
@@ -120,4 +121,36 @@ public class Map
             _tileHeight = value;
         }
     }
+
+    public void LoadFromXML(XmlNode node)
+    {
+        this.Cols = int.Parse(node.Attributes["columns"].Value.ToString());
+        this.Rows = int.Parse(node.Attributes["rows"].Value.ToString());
+        this.TileWidth = int.Parse(node.Attributes["tileWidth"].Value.ToString());
+        this.TileHeight = int.Parse(node.Attributes["tileHeight"].Value.ToString());
+        this.ImageSource = node.Attributes["imageSource"].Value;
+
+        if (node.HasChildNodes)
+        {
+            XmlNodeList layerList = node.SelectNodes("/Map/Layers");
+            foreach (XmlNode child in layerList)
+            {
+                Layer layer = new Layer();
+                this.Layers.Add(layer.LoadFromXML(child));
+            }
+            
+            XmlNodeList objectList = node.SelectNodes("/Map/Objects");
+            foreach (XmlNode child in objectList)
+            {
+                Object obj = new Object();
+                this.Objects.Add(obj.LoadFromXML(child));
+            }
+        }
+    }
+
+    public void WriteMap(XmlWriter writer)
+    {
+
+    }
+
 }

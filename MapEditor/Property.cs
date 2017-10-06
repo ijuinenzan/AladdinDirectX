@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Xml;
+using System.Collections.Generic;
 
 public class Property
 {
@@ -59,5 +61,23 @@ public class Property
         {
             _defaultValue = value;
         }
+    }
+
+    public Property LoadFromXML (XmlNode node)
+    {
+        if (node.HasChildNodes)
+        {
+            foreach (XmlNode child in node.ChildNodes)
+            {
+                this.Id = int.Parse(child.Attributes["id"].Value);
+                this.Name = child.Attributes["name"].Value;
+                this.Type = child.Attributes["type"].Value;
+                this.DefaultValue = child.Attributes["defaultValue"].Value;
+
+            }
+            return this;
+        }
+        return null;
+       
     }
 }

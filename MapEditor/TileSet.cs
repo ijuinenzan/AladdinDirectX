@@ -1,31 +1,39 @@
 ﻿using System;
 using System.Drawing;
+using System.Xml;
 
 public class TileSet
 {
     private int _id;
-    private Image _image;
+    //private Image _image;
 
     public TileSet Clone()
     {
         TileSet a = new TileSet();
-        a._image = (Image)_image.Clone();
+        //a._image = (Image)_image.Clone();
         a._id = _id;
 
         return a;
     }
 
-    public Image Image
+    public TileSet LoadFromXML(XmlNode node)
     {
-        get
-        {
-            return _image;
-        }
-        set
-        {
-            _image = value;
-        }
+        _id = int.Parse(node.Attributes["id"].Value);
+        return this;
     }
+
+
+    //public Image Image
+    //{
+    //    get
+    //    {
+    //        return _image;
+    //    }
+    //    set
+    //    {
+    //        _image = value;
+    //    }
+    //}
 
     public int Id
     {

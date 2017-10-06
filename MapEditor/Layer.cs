@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Xml;
 
 public class Layer
 {
@@ -20,6 +21,25 @@ public class Layer
         a._id = _id;
         a._order = _order;
         return a;
+    }
+
+    public Layer LoadFromXML(XmlNode node)
+    {
+        if (node.HasChildNodes)
+        {
+            TileSet tileSet = new TileSet();
+            foreach (XmlNode child in node.ChildNodes)
+            {
+                this.Id = int.Parse(child.Attributes["id"].Value);
+                this.Order = int.Parse(child.Attributes["order"].Value);
+                foreach (XmlNodeList subChild in child.SelectNodes("/Map/Layers/Layer/TileSets"))
+                {
+                    this.TileSets.Add(tileSet.LoadFromXML(child));
+                }
+            }
+            return this;
+        }
+        return null;
     }
 
     public Layer()
