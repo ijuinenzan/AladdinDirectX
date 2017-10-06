@@ -23,23 +23,16 @@ public class Layer
         return a;
     }
 
-    public Layer LoadFromXML(XmlNode node)
+    public void LoadFromXML(XmlNode node)
     {
-        if (node.HasChildNodes)
+        _id = int.Parse(node.Attributes["id"].Value);
+        _order = int.Parse(node.Attributes["order"].Value);
+        foreach (XmlNode subChild in node.FirstChild.ChildNodes)
         {
             TileSet tileSet = new TileSet();
-            foreach (XmlNode child in node.ChildNodes)
-            {
-                this.Id = int.Parse(child.Attributes["id"].Value);
-                this.Order = int.Parse(child.Attributes["order"].Value);
-                foreach (XmlNodeList subChild in child.SelectNodes("/Map/Layers/Layer/TileSets"))
-                {
-                    this.TileSets.Add(tileSet.LoadFromXML(child));
-                }
-            }
-            return this;
+            tileSet.LoadFromXML(subChild);
+            TileSets.Add(tileSet);
         }
-        return null;
     }
 
     public Layer()

@@ -63,21 +63,12 @@ public class Property
         }
     }
 
-    public Property LoadFromXML (XmlNode node)
+    public void LoadFromXML (XmlNode node)
     {
-        if (node.HasChildNodes)
-        {
-            foreach (XmlNode child in node.ChildNodes)
-            {
-                this.Id = int.Parse(child.Attributes["id"].Value);
-                this.Name = child.Attributes["name"].Value;
-                this.Type = child.Attributes["type"].Value;
-                this.DefaultValue = child.Attributes["defaultValue"].Value;
 
-            }
-            return this;
-        }
-        return null;
-       
+        this.Id = int.Parse(node.Attributes["id"].Value);
+        this.Name = node.Attributes["name"].Value;
+        this.Type = node.Attributes["type"].Value;
+        this.DefaultValue = node.Attributes["defaultValue"].Value;   
     }
 }

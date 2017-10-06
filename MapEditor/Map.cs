@@ -132,18 +132,20 @@ public class Map
 
         if (node.HasChildNodes)
         {
-            XmlNodeList layerList = node.SelectNodes("/Map/Layers");
+            XmlNodeList layerList = node.SelectNodes("/Map/Layers/Layer");
             foreach (XmlNode child in layerList)
             {
                 Layer layer = new Layer();
-                this.Layers.Add(layer.LoadFromXML(child));
+                layer.LoadFromXML(child);
+                Layers.Add(layer);
             }
             
-            XmlNodeList objectList = node.SelectNodes("/Map/Objects");
+            XmlNodeList objectList = node.SelectNodes("/Map/Objects/Object");
             foreach (XmlNode child in objectList)
             {
                 Object obj = new Object();
-                this.Objects.Add(obj.LoadFromXML(child));
+                obj.LoadFromXML(child);
+                Objects.Add(obj);
             }
         }
     }

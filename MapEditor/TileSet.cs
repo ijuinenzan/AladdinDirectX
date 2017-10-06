@@ -16,10 +16,9 @@ public class TileSet
         return a;
     }
 
-    public TileSet LoadFromXML(XmlNode node)
+    public void LoadFromXML(XmlNode node)
     {
-        _id = int.Parse(node.Attributes["id"].Value);
-        return this;
+        this.Id = int.Parse(node.Attributes["id"].Value);
     }
 
 

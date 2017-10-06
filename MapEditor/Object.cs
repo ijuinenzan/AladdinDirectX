@@ -28,27 +28,21 @@ public class Object
         return a;
     }
 
-    public Object LoadFromXML(XmlNode node)
-    {  
-        if (node.HasChildNodes)
+    public void LoadFromXML(XmlNode node)
+    {
+        _id = int.Parse(node.Attributes["id"].Value);
+        _name = node.Attributes["name"].Value;
+        _height = int.Parse(node.Attributes["height"].Value);
+        _width = int.Parse(node.Attributes["width"].Value);
+        _type = int.Parse(node.Attributes["type"].Value);
+        _x = int.Parse(node.Attributes["x"].Value);
+        _y = int.Parse(node.Attributes["y"].Value);
+        foreach (XmlNode subchild in node.ChildNodes)
         {
-            
             Property property = new Property();
-            foreach (XmlNode child in node.ChildNodes)
-            {
-                this.Id = int.Parse(child.Attributes["id"].Value);
-                this.Name = child.Attributes["name"].Value;
-                this.Height = int.Parse(child.Attributes["height"].Value);
-                this.Width = int.Parse(child.Attributes["width"].Value);
-                this.Type = int.Parse(child.Attributes["type"].Value);
-                this.X = int.Parse(child.Attributes["x"].Value);
-                this.Y = int.Parse(child.Attributes["y"].Value);
-                child.SelectNodes("/Map/Objects/Object/Property");
-                this.Properties.Add(property.LoadFromXML(child));
-            }
-            return this;
+            Properties.Add(property);
+            property.LoadFromXML(subchild);
         }
-        return null;
     }
 
     public Object()
