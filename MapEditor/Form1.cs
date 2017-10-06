@@ -68,26 +68,11 @@ namespace MapEditor
                             writer.WriteEndElement(); // end element TileSet
                         }
                         writer.WriteEndElement();
+                        writer.WriteEndElement();
                     }
-                    writer.WriteEndElement();
+                    writer.WriteEndElement();// write end element Layers
 
-                    ////write MatrixIndex
-                    //writer.WriteStartElement("MatrixIndex");
-                    //for (int i = 0; i < map.Rows; i++)
-                    //{
-                    //    writer.WriteStartElement("Row");
-                    //    writer.WriteAttributeString("id=", i.ToString());
-                    //    Dictionary<int, TileSet>.ValueCollection tileSetCollection = layer.TileSets.Values;
-                    //    foreach (var tileSet in layer.TileSets)
-                    //    {
-                    //        if (tileSet.Value.LayerId == i)
-                    //        {
-
-                    //        }
-                    //    }
-                    //    writer.WriteEndElement(); //  end the element Row
-                    //}
-                    //writer.WriteEndElement(); // end the element MatrixIndex
+                    
 
                     //write element Objects
                     writer.WriteStartElement("Objects");
