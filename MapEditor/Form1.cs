@@ -70,9 +70,25 @@ namespace MapEditor
                         writer.WriteEndElement();
                         writer.WriteEndElement();
                     }
-                    writer.WriteEndElement();// write end element Layers
+                    writer.WriteEndElement();
 
-                    
+                    ////write MatrixIndex
+                    //writer.WriteStartElement("MatrixIndex");
+                    //for (int i = 0; i < map.Rows; i++)
+                    //{
+                    //    writer.WriteStartElement("Row");
+                    //    writer.WriteAttributeString("id=", i.ToString());
+                    //    Dictionary<int, TileSet>.ValueCollection tileSetCollection = layer.TileSets.Values;
+                    //    foreach (var tileSet in layer.TileSets)
+                    //    {
+                    //        if (tileSet.Value.LayerId == i)
+                    //        {
+
+                    //        }
+                    //    }
+                    //    writer.WriteEndElement(); //  end the element Row
+                    //}
+                    //writer.WriteEndElement(); // end the element MatrixIndex
 
                     //write element Objects
                     writer.WriteStartElement("Objects");
@@ -122,7 +138,7 @@ namespace MapEditor
                 map.LoadFromXML(node);
                 
             }
-            button1_Click(sender, e);
+            //button1_Click(sender, e);
         }
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
